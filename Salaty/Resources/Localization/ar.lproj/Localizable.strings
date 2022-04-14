@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  Salaty
+
+  Created by Mohamed Elshaer on 01/03/2022.
+  
+*/
+
+changeLocation = "تغيير الموقع";
+soundOne = "الصوت ١؟";
+soundTwo = "الصوت ٢؟";
+soundThree = "الصوت ٣؟";
+soundElHaram = "صوت الحرم المكي؟";
+soundSlient = "بدون صوت؟";
+soundTitle = "اختار صوت الاذان";
+stop = "ايقاف الصوت";
+submit = "تاكيد";
+sorry = "عذرا";
+error = "خطأ";
+unableToFind = "تعذر العثور على عنوان الموقع";
+noMatchingAddresses = "لم يتم العثور على عناوين متطابقة";
+pleaseTurnOnLocation = "يرجى تشغيل خدمات الموقع";
+fajr = "الفجر";
+dhour = "الضهر";
+asr = "العصر";
+majirb = "المغرب";
+isha = "العشاء";
+salaTime = "وقت الصلاة";
+timeFor = "حان الآن موعد صلاة";
+
+karachi= "جامعة العلوم الإسلامية ، كراتشي";
+ISNA = "الجمعية الإسلامية لأمريكا الشمالية";
+worldLeague = "رابطة العالم الإسلامي";
+makkah = "جامعة أم القرى بمكة المكرمة";
+egyptian = "الهيئة المصرية العامة للمساحة";
+gulf = "منطقة الخليج";
+kuwait = "الكويت";
+qatar = "قطر";
+singapore = "المجلس الديني الإسلامي في سنغافورة";
+france = "مؤسسة الاتحاد الاسلامية دي فرنسا";
+turkey = "مديرية الشؤون الدينية ، تركيا";
+
+shafii = "شفعي";
+hanfi = "حنفي";
+
+done = "حسنا";

@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (5.4.1)
+  - Realm (10.7.1):
+    - Realm/Headers (= 10.7.1)
+  - Realm/Headers (10.7.1)
+  - RealmSwift (10.7.1):
+    - Realm (= 10.7.1)
+  - SwiftGen (6.4.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - RealmSwift
+  - SwiftGen
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Realm
+    - RealmSwift
+    - SwiftGen
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  Realm: 55bae3a2f42186360b54fd8783e884ae8656ab05
+  RealmSwift: 0d9bb38ad2cb953fc61d6827be5611972a75ca31
+  SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
+
+PODFILE CHECKSUM: e467afafb2e473760b11a85da6428b8e9d06224b
+
+COCOAPODS: 1.10.1

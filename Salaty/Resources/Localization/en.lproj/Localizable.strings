@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  Salaty
+
+  Created by Mohamed Elshaer on 01/03/2022.
+  
+*/
+
+changeLocation = "Change Location";
+soundOne = "Sound 1?";
+soundTwo = "Sound 2?";
+soundThree = "Sound 3?";
+soundElHaram = "Sound El-Haram?";
+soundSlient = "Without Sound?";
+soundTitle = "Choose Azan Sound";
+stop = "Stop Sound";
+submit = "Submit";
+sorry = "Sorry";
+error = "Error";
+unableToFind = "Unable to Find Address for Location";
+noMatchingAddresses = "No Matching Addresses Found";
+pleaseTurnOnLocation = "Please Turn On Location Services";
+fajr = "Fajr";
+dhour = "Dhour";
+asr = "Asr";
+majirb = "Majrib";
+isha = "Isha";
+salaTime = "Prayer Time";
+timeFor = "Time For";
+
+karachi= "Uiversity of Islamic Sciences, Karachi";
+ISNA = "Islamic Society of North America (ISNA)";
+worldLeague = "Muslim World League";
+makkah = "Umm Al-Qura University";
+egyptian = "Egyptian General Authority of Survey";
+gulf = "Gulf Region";
+kuwait = "Kuwait";
+qatar = "Qatar";
+singapore = "Majlis Ugama Islam Singapura";
+france = "Union Organization Islamic de France";
+turkey = "Diyanet İşleri Başkanlığı, Turkey";
+
+shafii = "Shafii";
+hanfi = "Hanfi";
+
+done = "Done";

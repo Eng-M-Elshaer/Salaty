@@ -1,0 +1,17 @@
+xcassets:
+  inputs: Salaty/Resources/Assets/Assets.xcassets
+  outputs:
+    templateName: swift5
+    output: Salaty/Resources/Assets/AssetsManager.swift
+
+colors:
+  inputs: Salaty/Resources/Colors/Colors.txt
+  outputs:
+    templatePath: MyColors.stencil
+    output: Salaty/Resources/Colors/ColorsManager.swift
+
+strings:
+  inputs: Salaty/Resources/Localization/en.lproj/Localizable.strings
+  outputs:
+    templatePath: structured-localized-swift5.stencil
+    output: Salaty/Resources/Localization/Strings.swift
