@@ -10,27 +10,19 @@ import UIKit
 class SettingView: UIView {
     
     //MARK:- Outlets
-    @IBOutlet weak var systemView: UIView!
+    @IBOutlet weak var methodView: UIView!
     @IBOutlet weak var methodTextField: UITextField!
-    @IBOutlet weak var mazhabView: UIView!
+    @IBOutlet weak var schoolView: UIView!
     @IBOutlet weak var schoolTextField: UITextField!
-    @IBOutlet weak var soundsTitleLabel: UILabel!
-    @IBOutlet weak var soundOneLabel: UILabel!
-    @IBOutlet weak var soundTwoLabel: UILabel!
-    @IBOutlet weak var soundThreeLabel: UILabel!
-    @IBOutlet weak var soundElHaramLabel: UILabel!
     @IBOutlet weak var soundSlientLabel: UILabel!
-    @IBOutlet weak var soundOneButton: UIButton!
-    @IBOutlet weak var soundTwoButton: UIButton!
-    @IBOutlet weak var soundThreeButton: UIButton!
-    @IBOutlet weak var soundElHaramSwitch: UISwitch!
     @IBOutlet weak var soundSlientSwitch: UISwitch!
     @IBOutlet weak var stopSoundButton: UIButton!
+    @IBOutlet weak var soundsView: UIView!
+    @IBOutlet weak var soundTextField: UITextField!
     
     //MARK:- Public Methods
     func setup() {
         setupViews()
-        setupTags()
         setupTextFields()
         setupLabels()
         setupSwitches()
@@ -42,59 +34,45 @@ class SettingView: UIView {
     func setupMethod(_ method: String){
         methodTextField.text = method
     }
-    func setupSound(_ tag: Int){
-        clearSoundButtons()
-        switch tag {
-        case 1:
-            soundOneButton.tintColor = .lightBlue
-            break
-        case 2:
-            soundTwoButton.tintColor = .lightBlue
-            break
-        case 3:
-            soundThreeButton.tintColor = .lightBlue
-            break
-        case 4:
-            soundElHaramSwitch.isOn = true
-            break
-        case 5:
+    func setupSound(_ soundName: String, isSlient: Bool){
+        if isSlient {
+            soundTextField.text = L10n.soundTitle
             soundSlientSwitch.isOn = true
-            break
-        default:
-            break
+        } else {
+            soundTextField.text = soundName
+            soundSlientSwitch.isOn = false
         }
-        UserDefultsManger.shared().sound = tag
+    }
+    func setSlient(){
+        soundSlientSwitch.isOn = false
     }
 }
 
 //MARK:- Private Methods
 extension SettingView {
-    private func clearSoundButtons(){
-        soundOneButton.tintColor = .white
-        soundTwoButton.tintColor = .white
-        soundThreeButton.tintColor = .white
-        soundElHaramSwitch.isOn = false
-        soundSlientSwitch.isOn = false
-    }
     private func setupView(_ view: UIView){
-        view.cornerStylish(color: .lightBlue)
-        view.backgroundColor = .lightBlue
+        view.cornerStylish(color: .skyBlue)
+        view.backgroundColor = .skyBlue
     }
     private func setupViews(){
-        setupView(systemView)
-        setupView(mazhabView)
+        setupView(methodView)
+        setupView(schoolView)
+        setupView(soundsView)
     }
     private func setupTextField(_ textField: UITextField){
         textField.borderStyle = .none
         textField.textAlignment = .center
-        textField.textColor = .specialPurple
+        textField.textColor = .white
         textField.font = UIFont.boldSystemFont(ofSize: 16.0)
     }
     private func setupTextFields(){
         methodTextField.tag = 10
         schoolTextField.tag = 20
+        soundTextField.tag = 30
         setupTextField(methodTextField)
         setupTextField(schoolTextField)
+        setupTextField(soundTextField)
+        soundTextField.text = L10n.soundTitle
     }
     private func setupLabel(_ label: UILabel, text: String, isBold: Bool = false){
         label.textColor = .black
@@ -106,31 +84,18 @@ extension SettingView {
         }
     }
     private func setupLabels(){
-        setupLabel(soundsTitleLabel, text: L10n.soundTitle, isBold: true)
-        setupLabel(soundOneLabel, text: L10n.soundOne)
-        setupLabel(soundTwoLabel, text: L10n.soundTwo)
-        setupLabel(soundThreeLabel, text: L10n.soundThree)
-        setupLabel(soundElHaramLabel, text: L10n.soundElHaram)
         setupLabel(soundSlientLabel, text: L10n.soundSlient)
     }
     private func setupSwitch(_ theSwitch: UISwitch){
-        theSwitch.onTintColor = .specialPurple
+        theSwitch.onTintColor = .skyBlue
     }
     private func setupSwitches(){
-        setupSwitch(soundElHaramSwitch)
         setupSwitch(soundSlientSwitch)
     }
     private func setupLocationButton(){
-        stopSoundButton.cornerStylish(color: .specialPurple)
+        stopSoundButton.cornerStylish(color: .skyBlue)
         stopSoundButton.setTitle(L10n.stop, for: .normal)
-        stopSoundButton.setTitleColor(.lightBlue, for: .normal)
-        stopSoundButton.backgroundColor = .specialPurple
-    }
-    private func setupTags(){
-        soundOneButton.tag = 1
-        soundTwoButton.tag = 2
-        soundThreeButton.tag = 3
-        soundElHaramSwitch.tag = 4
-        soundSlientSwitch.tag = 5
+        stopSoundButton.setTitleColor(.white, for: .normal)
+        stopSoundButton.backgroundColor = .skyBlue
     }
 }

@@ -25,7 +25,7 @@ class TabBarVC: UITabBarController {
 // MARK:- Private Methods
 extension TabBarVC {
     private func setupTabBarView(){
-        tabBar.barTintColor = .lightBlue
+        tabBar.barTintColor = .spaceGrey
         tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
         tabBar.layer.shadowRadius = 10
         tabBar.layer.shadowColor = UIColor.black.cgColor
@@ -34,13 +34,13 @@ extension TabBarVC {
     private func setSettingTab() {
         let settingVC = SettingVC.create()
         settingVC.tabBarItem.image = Asset.settingWhiteTab.image.withRenderingMode(.alwaysOriginal)
-        settingVC.tabBarItem.selectedImage = Asset.settingPurpleTab.image.withRenderingMode(.alwaysOriginal)
+        settingVC.tabBarItem.selectedImage = Asset.settingBlueTab.image.withRenderingMode(.alwaysOriginal)
         settingNavigation.viewControllers = [settingVC]
     }
     private func setMainTab() {
         let mainVC = MainVC.create()
         mainVC.tabBarItem.image = Asset.homeWhiteTab.image.withRenderingMode(.alwaysOriginal)
-        mainVC.tabBarItem.selectedImage = Asset.homePurpleTab.image.withRenderingMode(.alwaysOriginal)
+        mainVC.tabBarItem.selectedImage = Asset.homeBlueTab.image.withRenderingMode(.alwaysOriginal)
         mainNavigation.viewControllers = [mainVC]
     }
     private func setViewControllers() {

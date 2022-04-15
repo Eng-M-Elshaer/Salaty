@@ -24,12 +24,10 @@ internal enum Asset {
   internal static let accentColor = ColorAsset(name: "AccentColor")
   internal static let background = ImageAsset(name: "Background")
   internal static let dropDwonArrow = ImageAsset(name: "Drop Dwon Arrow")
-  internal static let homePurpleTab = ImageAsset(name: "Home Purple Tab")
+  internal static let homeBlueTab = ImageAsset(name: "Home Blue Tab")
   internal static let homeWhiteTab = ImageAsset(name: "Home White Tab")
-  internal static let mainTab = ImageAsset(name: "Main Tab")
-  internal static let sectionButtonBlue = ImageAsset(name: "Section Button Blue")
-  internal static let sectionButtonWhite = ImageAsset(name: "Section Button White")
-  internal static let settingPurpleTab = ImageAsset(name: "Setting Purple Tab")
+  internal static let location = ImageAsset(name: "Location")
+  internal static let settingBlueTab = ImageAsset(name: "Setting Blue Tab")
   internal static let settingWhiteTab = ImageAsset(name: "Setting White Tab")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

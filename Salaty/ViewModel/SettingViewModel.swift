@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol SettingViewModelProtocol{
     func numberOfRows(for textField: UITextField) -> Int
@@ -15,7 +16,10 @@ protocol SettingViewModelProtocol{
     func getSchool()
     func setData(for textField: UITextField, row: Int)
     func getDataFromUserDefults()
-    func getSound() -> Int
+    func getSound() -> (String, Bool)
+    func stopSound()
+    func playSound(songName: String)
+    func goPlay(songName: String)
 }
 
 class SettingViewModel {
@@ -24,6 +28,8 @@ class SettingViewModel {
     private weak var view: SettingVCProtocol?
     private var method: Int = 0
     private var school: Int = 0
+    private var player = AVAudioPlayer()
+    private var isPlaying = false
     private let methods = [(Name: L10n.karachi, ID: 1),
                           (Name: L10n.isna, ID: 2),
                           (Name: L10n.worldLeague, ID: 3),
@@ -36,6 +42,7 @@ class SettingViewModel {
                           (Name: L10n.france, ID: 12),
                           (Name: L10n.turkey, ID: 13)]
     private let schools: [String] = [L10n.shafii, L10n.hanfi]
+    private let sounds: [String] = [L10n.soundOne, L10n.soundTwo, L10n.soundThree, L10n.soundElHaram]
    
     // MARK:- Init
     init(view: SettingVCProtocol) {
@@ -52,22 +59,29 @@ extension SettingViewModel: SettingViewModelProtocol {
     func setData(for textField: UITextField, row: Int) {
         if textField.tag == 10 {
             UserDefultsManger.shared().method = self.methods[row].ID
-        } else {
+        } else if textField.tag == 20 {
             UserDefultsManger.shared().school = row
+        } else {
+            UserDefultsManger.shared().sound = row + 1
+            playSound(songName: "\(row + 1)")
         }
     }
     func numberOfRows(for textField: UITextField) -> Int {
         if textField.tag == 10 {
             return methods.count
-        } else {
+        } else if textField.tag == 20{
             return schools.count
+        } else {
+            return sounds.count
         }
     }
     func title(for textField: UITextField, row: Int) -> String? {
         if textField.tag == 10 {
             return methods[row].Name
-        } else {
+        } else if textField.tag == 20 {
             return schools[row]
+        } else {
+            return sounds[row]
         }
     }
     func checkChanges(){
@@ -95,7 +109,38 @@ extension SettingViewModel: SettingViewModelProtocol {
             }
         }
     }
-    func getSound() -> Int{
-        return UserDefultsManger.shared().sound
+    func getSound() -> (String, Bool){
+        let index = UserDefultsManger.shared().sound
+        if index == 5 {
+            return (sounds[index - 1], true)
+        }
+        return (sounds[index - 1], false)
+    }
+    func stopSound(){
+        if isPlaying == true {
+            player.stop()
+            isPlaying = false
+        }
+    }
+    func playSound(songName: String){
+        if isPlaying == false {
+            goPlay(songName: songName)
+            isPlaying = true
+        } else {
+            player.stop()
+            goPlay(songName: songName)
+            isPlaying = true
+        }
+    }
+    func goPlay(songName: String){
+        let theAudioPath = Bundle.main.path(forResource: songName, ofType: "mp3")
+        do {
+            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: theAudioPath!))
+        } catch {
+            print("Error With Playing the Sound")
+        }
+        isPlaying = true
+        player.prepareToPlay()
+        player.play()
     }
 }

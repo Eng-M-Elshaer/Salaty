@@ -37,7 +37,7 @@ class SettingVC: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
         viewModel.getMethod()
         viewModel.getSchool()
-        settingView.setupSound(viewModel.getSound())
+        settingView.setupSound(viewModel.getSound().0, isSlient: viewModel.getSound().1)
     }
     override func viewWillDisappear(_ animated: Bool) {
         viewModel.checkChanges()
@@ -51,23 +51,13 @@ class SettingVC: UIViewController {
     }
     
     //MARK:- Actions
-    @IBAction func soundsBtnTapped(_ sender: UIButton) {
-        settingView?.setupSound(sender.tag)
-        playSound(songName: "\(sender.tag)")
-    }
-    @IBAction func elHaramSwitchChanged(_ sender: UISwitch) {
-        settingView?.setupSound(sender.tag)
-        playSound(songName: "\(sender.tag)")
-    }
     @IBAction func slientSwitchChanged(_ sender: UISwitch) {
-        settingView?.setupSound(sender.tag)
-        playSound(songName: "\(sender.tag)")
+        UserDefultsManger.shared().sound = 5
+        settingView.setupSound(L10n.soundTitle, isSlient: true)
+        viewModel.playSound(songName: "5")
     }
     @IBAction func stopSoundBtnTapped(_ sender: UIButton) {
-        if isPlaying == true {
-            player.stop()
-            isPlaying = false
-        }
+        viewModel.stopSound()
     }
 }
 
@@ -112,7 +102,7 @@ extension SettingVC {
         let toolbar = setupPickerToolbar()
         pickerView.dataSource = self
         pickerView.delegate = self
-        for textField in [settingView.methodTextField, settingView.schoolTextField] {
+        for textField in [settingView.methodTextField, settingView.schoolTextField, settingView.soundTextField] {
             textField?.delegate = self
             textField?.inputView = pickerView
             textField?.inputAccessoryView = toolbar
@@ -133,9 +123,8 @@ extension SettingVC {
         let selection = viewModel.title(for: selectedTextField, row: selectedRow)
         viewModel.setData(for: selectedTextField, row: selectedRow)
         selectedTextField.text = selection
-        // Dismiss picker
         selectedTextField.resignFirstResponder()
-        // Reset picker selection to the first row
+        settingView.setSlient()
         picker.selectRow(0, inComponent: 0, animated: false)
     }
     @objc private func cancelHandler() {
@@ -148,25 +137,25 @@ extension SettingVC {
     private func textFieldTapped(textField: UITextField) {
         selectedTextField = textField
     }
-    func playSound(songName: String){
-        if isPlaying == false {
-            goPlay(songName: songName)
-            isPlaying = true
-        } else {
-            player.stop()
-            goPlay(songName: songName)
-            isPlaying = true
-        }
-    }
-    func goPlay(songName: String){
-        let theAudioPath = Bundle.main.path(forResource: songName, ofType: "mp3")
-        do {
-            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: theAudioPath!))
-        } catch {
-            print("Error With Playing the Sound")
-        }
-        isPlaying = true
-        player.prepareToPlay()
-        player.play()
-    }
+//    func playSound(songName: String){
+//        if isPlaying == false {
+//            goPlay(songName: songName)
+//            isPlaying = true
+//        } else {
+//            player.stop()
+//            goPlay(songName: songName)
+//            isPlaying = true
+//        }
+//    }
+//    func goPlay(songName: String){
+//        let theAudioPath = Bundle.main.path(forResource: songName, ofType: "mp3")
+//        do {
+//            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: theAudioPath!))
+//        } catch {
+//            print("Error With Playing the Sound")
+//        }
+//        isPlaying = true
+//        player.prepareToPlay()
+//        player.play()
+//    }
 }

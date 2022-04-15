@@ -7,10 +7,10 @@
 */
 
 changeLocation = "Change Location";
-soundOne = "Sound 1?";
-soundTwo = "Sound 2?";
-soundThree = "Sound 3?";
-soundElHaram = "Sound El-Haram?";
+soundOne = "Sound 1";
+soundTwo = "Sound 2";
+soundThree = "Sound 3";
+soundElHaram = "Sound El-Haram";
 soundSlient = "Without Sound?";
 soundTitle = "Choose Azan Sound";
 stop = "Stop Sound";
@@ -44,3 +44,5 @@ shafii = "Shafii";
 hanfi = "Hanfi";
 
 done = "Done";
+prayer = "Prayer";
+time = "Time";

@@ -1,3 +1,6 @@
 lightBlue: #0892cd
 specialPurple: #430859
 specialLightPurple: #8742a1
+spaceGrey: #F6F6F6
+skyBlue: 7DAAD4
+darkGrey: #808080

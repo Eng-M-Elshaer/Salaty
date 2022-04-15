@@ -7,10 +7,10 @@
 */
 
 changeLocation = "تغيير الموقع";
-soundOne = "الصوت ١؟";
-soundTwo = "الصوت ٢؟";
-soundThree = "الصوت ٣؟";
-soundElHaram = "صوت الحرم المكي؟";
+soundOne = "الصوت ١";
+soundTwo = "الصوت ٢";
+soundThree = "الصوت ٣";
+soundElHaram = "صوت الحرم المكي";
 soundSlient = "بدون صوت؟";
 soundTitle = "اختار صوت الاذان";
 stop = "ايقاف الصوت";
@@ -44,3 +44,6 @@ shafii = "شفعي";
 hanfi = "حنفي";
 
 done = "حسنا";
+
+prayer = "الصلاة";
+time = "الوقت";

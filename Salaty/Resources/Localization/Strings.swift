@@ -40,6 +40,8 @@ internal enum L10n {
   internal static var noMatchingAddresses: String { return L10n.tr("Localizable", "noMatchingAddresses") }
   /// Please Turn On Location Services
   internal static var pleaseTurnOnLocation: String { return L10n.tr("Localizable", "pleaseTurnOnLocation") }
+  /// Prayer
+  internal static var prayer: String { return L10n.tr("Localizable", "prayer") }
   /// Qatar
   internal static var qatar: String { return L10n.tr("Localizable", "qatar") }
   /// Prayer Time
@@ -50,22 +52,24 @@ internal enum L10n {
   internal static var singapore: String { return L10n.tr("Localizable", "singapore") }
   /// Sorry
   internal static var sorry: String { return L10n.tr("Localizable", "sorry") }
-  /// Sound El-Haram?
+  /// Sound El-Haram
   internal static var soundElHaram: String { return L10n.tr("Localizable", "soundElHaram") }
-  /// Sound 1?
+  /// Sound 1
   internal static var soundOne: String { return L10n.tr("Localizable", "soundOne") }
   /// Without Sound?
   internal static var soundSlient: String { return L10n.tr("Localizable", "soundSlient") }
-  /// Sound 3?
+  /// Sound 3
   internal static var soundThree: String { return L10n.tr("Localizable", "soundThree") }
   /// Choose Azan Sound
   internal static var soundTitle: String { return L10n.tr("Localizable", "soundTitle") }
-  /// Sound 2?
+  /// Sound 2
   internal static var soundTwo: String { return L10n.tr("Localizable", "soundTwo") }
   /// Stop Sound
   internal static var stop: String { return L10n.tr("Localizable", "stop") }
   /// Submit
   internal static var submit: String { return L10n.tr("Localizable", "submit") }
+  /// Time
+  internal static var time: String { return L10n.tr("Localizable", "time") }
   /// Time For
   internal static var timeFor: String { return L10n.tr("Localizable", "timeFor") }
   /// Diyanet İşleri Başkanlığı, Turkey
