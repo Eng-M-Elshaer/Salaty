@@ -1,7 +1,9 @@
 # Salaty
 Salaty App is Athan App for the Prayers.
 
-![Simulator Screen Shot - iPhone SE (2nd generation) - 2022-04-15 at 13 22 45](https://user-images.githubusercontent.com/29343159/163613667-65ba7042-9e21-4578-9ce3-5d32aecf6471.png)
+## Review
+![Simulator Screen Shot - iPhone SE (2nd generation) - 2022-04-15 at 13 22 29](https://user-images.githubusercontent.com/29343159/163615374-412b016e-eb68-4470-b8f4-48a50fc92dc4.png)
+![Simulator Screen Shot - iPhone SE (2nd generation) - 2022-04-15 at 13 22 45](https://user-images.githubusercontent.com/29343159/163615586-56909e47-0007-4f14-9b8f-5245d0f868c1.png)
 
 
 ## Usage
